@@ -54,7 +54,7 @@ const GameDetail = ({ pathId }) => {
               </div>
             </div>
             <div className="media">
-              <img src={game.background_image} alt={game.background_image} />
+              <img key={game.id} src={game.background_image} alt={game.background_image} />
             </div>
             <div className="description">
               <p>{game.description_raw}</p>
@@ -79,6 +79,7 @@ const CardShadow = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 5;
   &::-webkit-scrollbar {
     width: 10px;
   }
@@ -103,6 +104,7 @@ const Detail = styled(motion.div)`
   border-radius: 1rem;
   left: 10%;
   position: absolute;
+  z-index: 10;
   span {
     color: grey;
   }

@@ -4,6 +4,7 @@ import { IoLogoApple } from "react-icons/io";
 import { fetchSearch } from "../actions/actionsGames";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import { fadeIn } from "../animation";
 
 const Nav = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const Nav = () => {
   };
 
   return (
-    <StyledNav>
+    <StyledNav variants={fadeIn} initial="hidden" animate="show">
       <Logo>
         <IoLogoApple style={{ fontSize: "35", color: "#ff8a7c" }} />
         <span>Ignite</span>

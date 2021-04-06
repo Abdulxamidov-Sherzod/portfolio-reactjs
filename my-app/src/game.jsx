@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { loadDetail } from "./actions/detailAction";
 import { Link } from "react-router-dom";
+import { popup } from "./animation";
 
 const Game = ({ name, released, img, id }) => {
   const stringPathId = id.toString();
@@ -14,7 +15,13 @@ const Game = ({ name, released, img, id }) => {
     console.log(typeof id);
   };
   return (
-    <StyledGame layoutId={id} onClick={loadDetailHandler}>
+    <StyledGame
+      variants={popup}
+      initial="hidden"
+      animate="show"
+      layoutId={id}
+      onClick={loadDetailHandler}
+    >
       <Link to={`/game/${id}`}>
         <h4>{name}</h4>
         <p>{released}</p>
