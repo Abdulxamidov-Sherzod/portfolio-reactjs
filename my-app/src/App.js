@@ -1,10 +1,17 @@
-import SignupComponent from "./ax";
-import Axios from "./axios";
+// Components and pages
+import GlobalStyles from "./actions/globalStyles";
+import Home from "./pages/home";
+import { Route } from "react-router-dom";
+import Nav from "./components/nav";
 
 function App() {
   return (
     <>
-      <Axios />
+      <GlobalStyles />
+      <Nav />
+      <Route path={["/game/:id", "/"]}>
+        <Home />
+      </Route>
     </>
   );
 }
